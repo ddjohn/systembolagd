@@ -5,6 +5,8 @@
     import { onMount } from 'svelte';
     import { useTracker } from 'meteor/rdb:svelte-meteor-data';  
 
+import { Accounts } from 'meteor/accounts-base';
+
     onMount(async () => {
         console.log('Home.svelte', 'onMount()');
     });

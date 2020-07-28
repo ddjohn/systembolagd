@@ -28,13 +28,29 @@ Meteor.startup(() => {
                 const untappd = new UntappdAPI(json.response.access_token);
 
                 untappd.getUser('').then((user) => {
-                    console.log('User: ' + user.uid);
-                    console.log('User: ' + user.first_name);
-                    console.log('User: ' + user.last_name);
+                    console.log('authorization.js', 'getUser()');
+
+                    //console.log(user);
                     console.log('Token: ' + json.response.access_token);
+
+                    let id = Accounts.createUser({
+                        uid: user.uid,
+                        username: user.first_name + ' ' + user.last_name + ' (' + user.user_name + ')',
+                        email: user.settings.email_address,
+                        profile: {
+                          token: json.response.access_token
+                        } 
+                      });
+                      console.log('id=' + id);
+
+                    response.statusCode = 301;
+                    response.setHeader('User-Agent', 'SystemBolagd'); 
+                    response.setHeader('Location', 
+                        'https://systembolagd.servebeer.com/?' +
+                        'id=' + id);
+                    response.end('Logged in succesfully...');
                 });
             });
         });
-        response.end('Where should we go from here...');
     });
 });
