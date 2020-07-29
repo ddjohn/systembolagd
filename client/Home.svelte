@@ -37,8 +37,6 @@
 
 </script>
 
-<h1>Home</h1>
-
 <div>
 {#if user}
     <article class="card">

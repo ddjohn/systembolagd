@@ -2,4 +2,16 @@ body {
     padding: 10px;
     font-family: sans-serif;
 }
+
+
+a {
+    color: black;  
+    class: "button";
+}
+  
+[aria-current]:not([aria-current="false"]) {
+    font-weight: bold;
+    text-decoration: underline;
+    text-transform: uppercase;
+}
   

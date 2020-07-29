@@ -22,10 +22,13 @@
         <div class="menu">
             User: {$currentUser}
             Id: {$currentUserId}
-            <Link to='/'>HOME</Link>
-            <Link to='/other'>OTHER</Link>
-            <Link to='/credits'>CREDITS</Link>
+            <Link to='/'>Home</Link>
+            <Link to='/other'>Other</Link>
+            <Link to='/friends'>Friends</Link>
+            <Link to='/badges'>Badges</Link>
+            <Link to='/credits'>Credits</Link>
             <a href="/" class="button icon-picture">Home</a>
+            <a href="/other" class="button icon-puzzle">Other</a>
             <a href="/credits" class="button icon-puzzle">Credits</a>
         </div>
     </nav>

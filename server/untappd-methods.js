@@ -17,7 +17,6 @@ Meteor.methods({
 		});
     },
 
-
 	'untappd.beers'() {
 		console.log('untappd-methods', 'beers()');
 
@@ -28,6 +27,32 @@ Meteor.methods({
         const api = new UntappdAPI(Meteor.user().profile.token);
 		return api.getBeers('').then((beers) => {
 			return beers;
+		});
+    },
+
+	'untappd.friends'() {
+		console.log('untappd-methods', 'friends()');
+
+		if (!this.userId) {
+			throw new Meteor.Error('not-authorized');
+		}
+
+        const api = new UntappdAPI(Meteor.user().profile.token);
+		return api.getFriends('').then((friends) => {
+			return friends;
+		});
+    },
+
+	'untappd.badges'() {
+		console.log('untappd-methods', 'badges()');
+
+		if (!this.userId) {
+			throw new Meteor.Error('not-authorized');
+		}
+
+        const api = new UntappdAPI(Meteor.user().profile.token);
+		return api.getBadges('').then((badges) => {
+			return badges;
 		});
     },
 });

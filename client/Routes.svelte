@@ -8,6 +8,8 @@
   import Home         from '/client/Home.svelte'
   import Credits      from '/client/Credits.svelte'
   import Other      from '/client/Other.svelte'
+  import Badges      from '/client/Badges.svelte'
+  import Friends      from '/client/Friends.svelte'
     import { Accounts } from 'meteor/accounts-base';
 
   let loggedIn = false
@@ -29,6 +31,8 @@
       <Route path="/"        component={Home}/>
       <Route path="/:id"     component={Home} />        
       <Route path="/credits" component={Credits} />
+      <Route path="/friends" component={Friends} />
+      <Route path="/badges"  component={Badges} />
       <Route path="/other"   component={Other} />
     
     {:else}
