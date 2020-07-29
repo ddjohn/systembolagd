@@ -17,7 +17,7 @@
                 console.log('Home.svelte', 'login ok');
             }
         });
-        console.log('Home.svelte', 'id=' + id);
+        console.log('Home.svelte', 'id', id);
     } else {
         console.log('Home.svelte', 'Not logging in!!!');
     }
@@ -55,7 +55,6 @@
         shops named System Bolaget. The app will cross reference untappd 
         with specific shops based on GPS position to list not tested beers.
     </p>
-
     <p>
         <a class="button" href="/authentication">Authenticate</a>
     </p>
