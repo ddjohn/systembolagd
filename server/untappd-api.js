@@ -11,9 +11,12 @@ export class UntappdAPI {
         this._token = token;
     }
 
-    async getBeers(user) {
+    async getBeers(user, limit, offset) {
         try {
-            const result = await got.post(UNTAPPD_API + '/user/beers/' + user + '?access_token=' + this._token, {});
+            const result = await got.post(UNTAPPD_API + '/user/beers/' + user +  
+                '?limit=' + limit +
+                '&offset=' + offset + 
+                '&access_token=' + this._token, {});
             const json = JSON.parse(result.body);
             return json["response"].beers.items;
         }

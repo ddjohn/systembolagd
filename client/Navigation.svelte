@@ -40,7 +40,7 @@
             {/if}
             
             <Link to='/'>Home</Link>
-            <Link to='/other'>Beers</Link>
+            <Link to='/beers'>Beers</Link>
             <Link to='/friends'>Friends</Link>
             <Link to='/badges'>Badges</Link>
             <Link to='/credits'>Credits</Link>

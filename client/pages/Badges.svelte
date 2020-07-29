@@ -21,16 +21,9 @@
 
 <h1>Badges</h1>
 {#if badges}
-    <table class='primary'>
-    <thead>
-        <tr><th>Avatar</th><th>User</th><th>Name</th></tr>
-    </thead>
-    <tbody>
+    <div class="flex four badge">
     {#each badges as badge}
-        <tr>    
-        <td>{badge.badge_name}</td>
-        </tr>
+      <span class="button">{badge.badge_name}</span>
     {/each}
-    </tbody>
-    </table>
+    </div>
 {/if}

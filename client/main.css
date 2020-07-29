@@ -1,17 +1,30 @@
+@import "../node_modules/picnic/picnic.min.css";
+@import "../node_modules/picnic/mungo.min.css";
+
+/*
 body {
     padding: 10px;
     font-family: sans-serif;
 }
+*/
 
-
-a {
-    color: black;  
-    class: "button";
-}
-  
 [aria-current]:not([aria-current="false"]) {
     font-weight: bold;
-    text-decoration: underline;
-    text-transform: uppercase;
 }
-  
+
+/*
+.flex {
+    //display: flex;
+    //margin-left: -.6em;
+    //width: calc(100% + .6em);
+    //flex-wrap: wrap;
+    //transition: all .3s ease;
+}
+
+.flex.badge > * {
+    //background: #7fdbff;
+    display: block;
+    //padding: .3em 0;
+    text-align: center;
+}
+*/

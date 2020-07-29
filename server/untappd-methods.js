@@ -17,7 +17,7 @@ Meteor.methods({
 		});
     },
 
-	'untappd.beers'() {
+	'untappd.beers'(limit, offset) {
 		console.log('untappd-methods', 'beers()');
 
 		if (!this.userId) {
@@ -25,7 +25,7 @@ Meteor.methods({
 		}
 
         const api = new UntappdAPI(Meteor.user().profile.token);
-		return api.getBeers('').then((beers) => {
+		return api.getBeers('', limit, offset).then((beers) => {
 			return beers;
 		});
     },

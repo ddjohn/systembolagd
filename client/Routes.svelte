@@ -4,14 +4,16 @@
   import { Tracker   } from 'meteor/tracker'
   import { onDestroy } from 'svelte'
   import { Router, Route, navigate } from 'svelte-routing'
-  import Navigation   from '/client/Navigation.svelte'
-  import Home         from '/client/Home.svelte'
-  import Credits      from '/client/Credits.svelte'
-  import Other      from '/client/Other.svelte'
-  import Badges      from '/client/Badges.svelte'
-  import Friends      from '/client/Friends.svelte'
-    import { Accounts } from 'meteor/accounts-base';
+  import { Accounts } from 'meteor/accounts-base';
 
+  import Navigation   from '/client/Navigation.svelte'
+  
+  import Home    from '/client/pages/Home.svelte'
+  import Credits from '/client/pages/Credits.svelte'
+  import Beers   from '/client/pages/Beers.svelte'
+  import Badges  from '/client/pages/Badges.svelte'
+  import Friends from '/client/pages/Friends.svelte'
+    
   let loggedIn = false
 
   const computation = Tracker.autorun(() => {
@@ -28,12 +30,12 @@
     {#if loggedIn}
     
       <Navigation />
-      <Route path="/"        component={Home}/>
+      <Route path="/"        component={Home} />
       <Route path="/:id"     component={Home} />        
-      <Route path="/credits" component={Credits} />
       <Route path="/friends" component={Friends} />
       <Route path="/badges"  component={Badges} />
-      <Route path="/other"   component={Other} />
+      <Route path="/beers"   component={Beers} />
+      <Route path="/credits" component={Credits} />
     
     {:else}
     

@@ -9,6 +9,7 @@
     "bcrypt": "^5.0.0",
     "got": "^11.5.1",
     "meteor-node-stubs": "^1.0.0",
+    "picnic": "^6.5.2",
     "svelte": "^3.24.0",
     "svelte-routing": "^1.4.2"
   }
