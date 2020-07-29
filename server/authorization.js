@@ -33,22 +33,32 @@ Meteor.startup(() => {
                     //console.log(user);
                     console.log('Token: ' + json.response.access_token);
 
-                    let id = Accounts.createUser({
-                        username: '' + user.uid,
-                        password: 'password', 
-                        email: user.settings.email_address,
-                        profile: {
-                            name: user.first_name + ' ' + user.last_name + ' (' + user.user_name + ')',
-                            token: json.response.access_token
-                        } 
-                      });
-                      console.log('id=' + id);
+                   // Meteor.users.remove({username: '' + user.uid }, function (error, result) {
+                   //    if (error) {
+                   //       console.log("Error removing user: ", error);
+                    //    } else {
+                    //      console.log("Number of users removed: " + result);
 
-                    response.statusCode = 301;
-                    response.setHeader('User-Agent', 'SystemBolagd'); 
-                    response.setHeader('Location', 
-                        'https://systembolagd.servebeer.com/' + user.uid);
-                    response.end('Logged in succesfully...');
+                          let id = Accounts.createUser({
+                            username: '' + user.uid,
+                            password: 'password', 
+                            email: user.settings.email_address,
+                            profile: {
+                                name: user.first_name + ' ' + user.last_name + ' (' + user.user_name + ')',
+                                token: json.response.access_token
+                            } 
+                          });
+                          console.log('id=' + id);
+    
+                        response.statusCode = 301;
+                        response.setHeader('User-Agent', 'SystemBolagd'); 
+                        response.setHeader('Location', 
+                            'https://systembolagd.servebeer.com/' + user.uid);
+                        response.end('Logged in succesfully...');
+    
+                      //  }
+                    //});
+
                 });
             });
         });

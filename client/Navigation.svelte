@@ -8,7 +8,7 @@
     $: currentUserId = useTracker(() => Meteor.userId());
 </script>
 
-<div style="overflow: hidden;height: 250px;">
+<div style="overflow: hidden;height: 70px;">
     <nav class="demo">
         <a href="#" class="brand">
             <img class="logo" src="https://untappd.s3.amazonaws.com/apps/ut_connection_default.png" />
@@ -17,12 +17,13 @@
     
         <!-- responsive-->
         <input id="bmenub" type="checkbox" class="show">
-        <label for="bmenub" class="burger pseudo button">menu</label>
+        <label for="bmenub" class="burger pseudo button">&#8801; menu</label>
     
         <div class="menu">
             User: {$currentUser}
             Id: {$currentUserId}
             <Link to='/'>HOME</Link>
+            <Link to='/other'>OTHER</Link>
             <Link to='/credits'>CREDITS</Link>
             <a href="/" class="button icon-picture">Home</a>
             <a href="/credits" class="button icon-puzzle">Credits</a>
