@@ -34,11 +34,12 @@ Meteor.startup(() => {
                     console.log('Token: ' + json.response.access_token);
 
                     let id = Accounts.createUser({
-                        uid: user.uid,
-                        username: user.first_name + ' ' + user.last_name + ' (' + user.user_name + ')',
+                        username: '' + user.uid,
+                        password: 'password', 
                         email: user.settings.email_address,
                         profile: {
-                          token: json.response.access_token
+                            name: user.first_name + ' ' + user.last_name + ' (' + user.user_name + ')',
+                            token: json.response.access_token
                         } 
                       });
                       console.log('id=' + id);
@@ -46,8 +47,7 @@ Meteor.startup(() => {
                     response.statusCode = 301;
                     response.setHeader('User-Agent', 'SystemBolagd'); 
                     response.setHeader('Location', 
-                        'https://systembolagd.servebeer.com/?' +
-                        'id=' + id);
+                        'https://systembolagd.servebeer.com/' + user.uid);
                     response.end('Logged in succesfully...');
                 });
             });

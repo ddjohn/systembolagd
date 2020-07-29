@@ -2,17 +2,21 @@
     console.log('Home.svelte', 'Loading...');
   
     import { Meteor } from "meteor/meteor";
-    import { onMount } from 'svelte';
+    import { onMount, onDestroy } from 'svelte';
     import { useTracker } from 'meteor/rdb:svelte-meteor-data';  
+    import { Accounts } from 'meteor/accounts-base';
 
-import { Accounts } from 'meteor/accounts-base';
+    export let id;
+    //export let location;     
 
-    onMount(async () => {
-        console.log('Home.svelte', 'onMount()');
+    Meteor.loginWithPassword(id, 'password', (error) => {
+        console.log(error);
     });
+    console.log(id);
 </script>
 
-<h1>Home</h1>
+<h1>Home {id}</h1>
+<h1>Home {location}</h1>
 
 <div>
     <p>
