@@ -29,9 +29,8 @@
         Meteor.call('untappd.user', (error, result) => {
             console.log('Home.svelte', 'untappd.user()');
 
-            console.log(error);
-            console.log(result);
-            user = result;
+            console.log('Home.svelte', 'error', error);
+            user = result.user;
         });
     });
 

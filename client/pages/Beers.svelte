@@ -14,9 +14,8 @@
         Meteor.call('untappd.beers', limit, offset, (error, result) => {
             console.log('Beers.svelte', 'untappd.beers()');
 
-            console.log(error);
-            console.log(result);
-            beers = result;
+            console.log('Beers.svelte', 'error', error);           
+            beers = result.beers.items;
         });
     });
 
@@ -24,7 +23,7 @@
         console.log('Beers.svelte', 'nextBeers()');
         offset += limit;
         Meteor.call('untappd.beers', limit, offset, (error, result) => {
-            beers = result;
+            beers = result.beers.items;
         });
     };
 
@@ -35,7 +34,7 @@
             offset = 0;
         }
         Meteor.call('untappd.beers', limit, offset, (error, result) => {
-            beers = result;
+            beers = result.beers.items;
         });
     };
 </script>

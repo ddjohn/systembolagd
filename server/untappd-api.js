@@ -18,7 +18,7 @@ export class UntappdAPI {
                 '&offset=' + offset + 
                 '&access_token=' + this._token, {});
             const json = JSON.parse(result.body);
-            return json["response"].beers.items;
+            return json["response"];
         }
         catch (error) {
             console.log('error', error);
@@ -29,7 +29,7 @@ export class UntappdAPI {
         try {
             const result = await got.post(UNTAPPD_API + '/user/friends/' + user + '?access_token=' + this._token, {});
             const json = JSON.parse(result.body);
-            return json["response"].items;
+            return json["response"];
         }
         catch (error) {
             console.log('error', error);
@@ -40,7 +40,7 @@ export class UntappdAPI {
         try {
             const result = await got.post(UNTAPPD_API + '/user/badges/' + user + '?access_token=' + this._token, {});
             const json = JSON.parse(result.body);
-            return json["response"].items;
+            return json["response"];
         }
         catch (error) {
             console.log('error', error);
@@ -51,7 +51,7 @@ export class UntappdAPI {
         try {
             const result = await got.post(UNTAPPD_API + '/user/info/' + user + '?access_token=' + this._token, {});
             const json = JSON.parse(result.body);
-            return json["response"]["user"];
+            return json["response"];
         }
         catch (error) {
             console.log('error', error);

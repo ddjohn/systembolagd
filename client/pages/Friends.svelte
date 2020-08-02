@@ -12,9 +12,8 @@
         Meteor.call('untappd.friends', (error, result) => {
             console.log('Friends.svelte', 'untappd.beers()');
 
-            console.log(error);
-            console.log(result);
-            friends = result;
+            console.log('Friends.svelte', 'error', error);
+            friends = result.items;
         });
     });
 </script>

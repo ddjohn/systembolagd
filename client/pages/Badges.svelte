@@ -12,9 +12,8 @@
         Meteor.call('untappd.badges', (error, result) => {
             console.log('Badges.svelte', 'untappd.beers()');
 
-            console.log(error);
-            console.log(result);
-            badges = result;
+            console.log('Badges.svelte', 'error', error);
+            badges = result.items;
         });
     });
 </script>
