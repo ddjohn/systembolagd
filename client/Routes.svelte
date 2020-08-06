@@ -6,13 +6,14 @@
   import { Router, Route, navigate } from 'svelte-routing'
   import { Accounts } from 'meteor/accounts-base';
 
-  import Navigation   from '/client/Navigation.svelte'
-  
-  import Home    from '/client/pages/Home.svelte'
-  import Credits from '/client/pages/Credits.svelte'
-  import Beers   from '/client/pages/Beers.svelte'
-  import Badges  from '/client/pages/Badges.svelte'
-  import Friends from '/client/pages/Friends.svelte'
+  import Navigation      from '/client/Navigation.svelte'  
+  import UserProfile     from '/client/pages/UserProfile.svelte'
+  import UserBeers       from '/client/pages/UserBeers.svelte'
+  import UserBadges      from '/client/pages/UserBadges.svelte'
+  import UserFriends     from '/client/pages/UserFriends.svelte'
+  import SearchBeers     from '/client/pages/SearchBeers.svelte'
+  import SearchBreweries from '/client/pages/SearchBreweries.svelte'
+  import Credits         from '/client/pages/Credits.svelte'
     
   let loggedIn = false
 
@@ -30,18 +31,20 @@
     {#if loggedIn}
     
       <Navigation />
-      <Route path="/"        component={Home} />
-      <Route path="/:id"     component={Home} />        
-      <Route path="/friends" component={Friends} />
-      <Route path="/badges"  component={Badges} />
-      <Route path="/beers"   component={Beers} />
+      <Route path="/"        component={UserProfile} />
+      <Route path="/:id"     component={UserProfile} />        
+      <Route path="/userfriends" component={UserFriends} />
+      <Route path="user/badges"  component={UserBadges} />
+      <Route path="/userbeers"   component={UserBeers} />
+      <Route path="/searchbeers"   component={SearchBeers} />
+      <Route path="/searchbreweries"   component={SearchBreweries} />
       <Route path="/credits" component={Credits} />
     
     {:else}
     
       <Navigation />
-      <Route path="/"        component={Home}/>
-      <Route path="/:id"     component={Home} />        
+      <Route path="/"        component={UserProfile}/>
+      <Route path="/:id"     component={UserProfile} />        
       <Route path="/credits" component={Credits} />
     
     {/if}

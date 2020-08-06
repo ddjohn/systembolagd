@@ -30,6 +30,32 @@ Meteor.methods({
 		});
     },
 
+	'untappd.search_beers'(query, limit, offset) {
+		console.log('untappd-methods', 'search_beers()');
+
+		if (!this.userId) {
+			throw new Meteor.Error('not-authorized');
+		}
+
+        const api = new UntappdAPI(Meteor.user().profile.token);
+		return api.searchBeers(query, limit, offset).then((beers) => {
+			return beers;
+		});
+    },
+
+	'untappd.search_breweries'(query, limit, offset) {
+		console.log('untappd-methods', 'search_breweries()');
+
+		if (!this.userId) {
+			throw new Meteor.Error('not-authorized');
+		}
+
+        const api = new UntappdAPI(Meteor.user().profile.token);
+		return api.searchBreweries(query, limit, offset).then((breweries) => {
+			return breweries;
+		});
+    },
+
 	'untappd.friends'() {
 		console.log('untappd-methods', 'friends()');
 

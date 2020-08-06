@@ -33,16 +33,19 @@
         <label for="bmenub" class="burger pseudo button">&#8801; menu</label>
     
         <div class="menu">
+<!--
             {#if $currentUser}
             {$currentUser.profile.name}
             {:else}
             Not logged in
             {/if}
-            
-            <Link to='/'>Home</Link>
-            <Link to='/beers'>Beers</Link>
-            <Link to='/friends'>Friends</Link>
-            <Link to='/badges'>Badges</Link>
+        -->        
+            <Link to='/'>User Profile</Link>
+            <Link to='/userbeers'>User Beers</Link>
+            <Link to='/userfriends'>User Friends</Link>
+            <Link to='/userbadges'>User Badges</Link>
+            <Link to='/searchbeers'>Search Beers</Link>
+            <Link to='/searchbreweries'>Search Breweries</Link>
             <Link to='/credits'>Credits</Link>
         </div>
     </nav>

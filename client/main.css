@@ -1,6 +1,11 @@
 @import "../node_modules/picnic/picnic.min.css";
 @import "../node_modules/picnic/mungo.min.css";
 
+.demo {
+    background: #2d2d2d;
+    color: #ffffff;
+}
+
 /*
 body {
     padding: 10px;
