@@ -6,6 +6,8 @@
     import { useTracker } from 'meteor/rdb:svelte-meteor-data';  
     import { Link       } from 'svelte-routing';
 
+    import "picnic/picnic.min.css";
+
     onMount(async () => {
         console.log('Navigation.svelte', 'onMount()');
 
